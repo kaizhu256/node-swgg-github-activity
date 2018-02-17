@@ -18251,7 +18251,7 @@ return Utf8ArrayToStr(bff);
             });
             // customize version
             options.dataTo = options.dataTo.replace((
-                /^(#### changelog for v|- npm publish v)\d{4}\.\d{1,2}\.\d{1,2}$/gm
+                /^(#### changelog for v|- npm publish v)\d{4}\.\d{1,2}\.\d{1,2}/gm
             ), '$1' + options.packageJson.version);
             // customize swaggerdoc
             if (!local.assetsDict['/assets.swgg.swagger.json'] ||
