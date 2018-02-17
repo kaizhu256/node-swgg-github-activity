@@ -55,10 +55,10 @@ this zero-dependency package will provide a swagger-client for github-activity's
 [![apidoc](https://kaizhu256.github.io/node-swgg-github-activity/build/screenshot.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-swgg-github-activity/build..beta..travis-ci.org/apidoc.html)
 
 #### todo
-- npm publish v2018.2.16
 - none
 
 #### changelog for v2018.2.16
+- npm publish v2018.2.16
 - initial package
 - none
 
