@@ -3,7 +3,7 @@
     "definitions": {},
     "info": {
         "title": "swgg-github-activity",
-        "version": "2018.2.16",
+        "version": "2018.2.17-alpha",
         "x-swgg-description": "this zero-dependency package will provide a swagger-client for github-activity's web-apis, with a working web-demo",
         "x-swgg-homepage": "https://github.com/kaizhu256/node-swgg-github-activity"
     },
