@@ -2,6 +2,80 @@
 <style>
 /*csslint
 */
+/* jslint-ignore-begin */
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+/* jslint-ignore-end */
+body {
+    background: #dde;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 40px;
+}
+body > a,
+body > button,
+body > div,
+body > input,
+body > pre,
+body > select,
+body > span,
+body > textarea {
+    margin-bottom: 20px;
+}
+body > button {
+    width: 20rem;
+}
+button {
+    cursor: pointer;
+}
+code,
+pre,
+textarea {
+    font-family: Menlo, Consolas, Courier New, monospace;
+}
+pre {
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+@keyframes uiAnimateShake {
+    0%, 50% {
+        transform: translateX(10px);
+    }
+    25%, 75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.uiAnimateShake {
+    animation-duration: 500ms;
+    animation-name: uiAnimateShake;
+}
+.uiAnimateSlide {
+    overflow-y: hidden;
+    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;
+}
+@keyframes uiAnimateSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.utility2FooterDiv {
+    text-align: center;
+}
+.zeroPixel {
+    border: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    width: 0;
+}
+</style>
+<style>
+/*csslint
+*/
 .testReportDiv {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -15,9 +89,7 @@
     background: #fdd;
     border-top: 1px solid black;
     margin-bottom: 0;
-    overflow-wrap: break-word;
     padding: 10px;
-    white-space: pre-wrap;
 }
 .testReportDiv span {
     display: inline-block;
@@ -66,10 +138,10 @@
 <h4>
     <span>version</span>-
         2018.2.17-alpha<br>
-    <span>test date</span>- 2018-02-17T11:36:25.287Z<br>
+    <span>test date</span>- 2018-02-19T09:45:05.670Z<br>
     <span>commit info</span>-
         
-        9a11c625b85c6143704aa2718ec37e7ad2431bf1 - [build clean]<br>
+        34a9e494ee6e9d1c22b020bf9bc81f27cd68113c - update.build<br>
         
 </h4>
 <table>
@@ -82,7 +154,7 @@
     </tr>
 </thead>
 <tbody><tr>
-    <td>205669 ms</td>
+    <td>151258 ms</td>
     <td class="testPassed">0</td>
     <td>33</td>
     <td>0</td>
@@ -92,14 +164,14 @@
 
 <div class="platform">
 <h4>
-    1. buildApidoc - node - linux v6.13.0 - 2018-02-17T11:34:45.758Z<br>
+    1. buildApidoc - node - linux v6.13.0 - 2018-02-19T09:44:11.265Z<br>
     
     <a href="screenshot.buildApidoc.svg">
         <img src="screenshot.buildApidoc.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 116309 ms<br>
+    <span>time-elapsed</span>- 61378 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 1<br>
     <span>tests pending</span>- 0<br>
@@ -115,7 +187,7 @@
 
 <tr>
     <td>1</td>
-    <td>5743 ms</td>
+    <td>5692 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -129,14 +201,14 @@
 
 <div class="platform">
 <h4>
-    2. npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-02-17T11:34:28.010Z<br>
+    2. npmTest - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.12 Safari/537.36 - 2018-02-19T09:43:53.643Z<br>
     
     <a href="screenshot.npmTest.browser.%252F.png">
         <img src="screenshot.npmTest.browser.%252F.png">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 134588 ms<br>
+    <span>time-elapsed</span>- 79518 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -166,7 +238,7 @@
 
 <tr>
     <td>4</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildCustomOrg_default</td>
 </tr>
@@ -180,7 +252,7 @@
 
 <tr>
     <td>6</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
@@ -201,7 +273,7 @@
 
 <tr>
     <td>9</td>
-    <td>29 ms</td>
+    <td>21 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -215,14 +287,14 @@
 
 <div class="platform">
 <h4>
-    3. npmTest - node - linux v6.13.0 - 2018-02-17T11:34:25.530Z<br>
+    3. npmTest - node - linux v6.13.0 - 2018-02-19T09:43:51.143Z<br>
     
     <a href="screenshot.npmTest.svg">
         <img src="screenshot.npmTest.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 136548 ms<br>
+    <span>time-elapsed</span>- 81558 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -238,14 +310,14 @@
 
 <tr>
     <td>10</td>
-    <td>268 ms</td>
+    <td>247 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>11</td>
-    <td>6106 ms</td>
+    <td>6225 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -259,14 +331,14 @@
 
 <tr>
     <td>13</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildLib_default</td>
 </tr>
 
 <tr>
     <td>14</td>
-    <td>35 ms</td>
+    <td>33 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
@@ -280,14 +352,14 @@
 
 <tr>
     <td>16</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_nop_default</td>
 </tr>
 
 <tr>
     <td>17</td>
-    <td>16385 ms</td>
+    <td>16478 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -301,14 +373,14 @@
 
 <div class="platform">
 <h4>
-    4. npmTestPublished - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Electron/1.6.15 Safari/537.36 - 2018-02-17T11:33:19.545Z<br>
+    4. npmTestPublished - browser - /index.default.html - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.12 Safari/537.36 - 2018-02-19T09:42:44.404Z<br>
     
     <a href="screenshot.npmTestPublished.browser.%252F.png">
         <img src="screenshot.npmTestPublished.browser.%252F.png">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 203054 ms<br>
+    <span>time-elapsed</span>- 148757 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -324,14 +396,14 @@
 
 <tr>
     <td>18</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>19</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -345,7 +417,7 @@
 
 <tr>
     <td>21</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildLib_default</td>
 </tr>
@@ -366,14 +438,14 @@
 
 <tr>
     <td>24</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_nop_default</td>
 </tr>
 
 <tr>
     <td>25</td>
-    <td>5 ms</td>
+    <td>22 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -387,14 +459,14 @@
 
 <div class="platform">
 <h4>
-    5. npmTestPublished - node - linux v6.13.0 - 2018-02-17T11:33:16.388Z<br>
+    5. npmTestPublished - node - linux v6.13.0 - 2018-02-19T09:42:41.351Z<br>
     
     <a href="screenshot.npmTestPublished.svg">
         <img src="screenshot.npmTestPublished.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 205669 ms<br>
+    <span>time-elapsed</span>- 151258 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -410,14 +482,14 @@
 
 <tr>
     <td>26</td>
-    <td>283 ms</td>
+    <td>279 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>27</td>
-    <td>6115 ms</td>
+    <td>6168 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -431,21 +503,21 @@
 
 <tr>
     <td>29</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildLib_default</td>
 </tr>
 
 <tr>
     <td>30</td>
-    <td>36 ms</td>
+    <td>39 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
 
 <tr>
     <td>31</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildTest_default</td>
 </tr>
@@ -459,7 +531,7 @@
 
 <tr>
     <td>33</td>
-    <td>17015 ms</td>
+    <td>16907 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
