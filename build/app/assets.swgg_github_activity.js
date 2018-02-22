@@ -1,4 +1,5 @@
 /* istanbul instrument in package swgg_github_activity */
+/* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
