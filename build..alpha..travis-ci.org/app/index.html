@@ -28,47 +28,68 @@
     }
 }
 @keyframes uiAnimateSpin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 a {
     overflow-wrap: break-word;
 }
-body {
-    background: #dde;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0 40px;
-}
-body > a,
-body > button,
 body > div,
-body > input,
 body > pre,
-body > select,
-body > span,
-body > textarea {
+body > textarea,
+body > .button {
     margin-bottom: 20px;
 }
-body > button {
-    width: 20rem;
+body > textarea {
+    height: 10rem;
+    width: 100%;
 }
-button {
-    cursor: pointer;
+body > textarea[readonly] {
+    background: #ddd;
+}
+body > .button {
+    width: 20rem;
 }
 code,
 pre,
 textarea {
-    font-family: Menlo, Consolas, Courier New, monospace;
+    font-family: Consolas, Menlo, monospace;
     font-size: small;
 }
 pre {
     overflow-wrap: break-word;
     white-space: pre-wrap;
 }
-.textOverflowEllipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+textarea {
+    overflow: auto;
+    white-space: pre;
+}
+.button {
+    background-color: #fff;
+    border: 1px solid;
+    border-bottom-color: rgb(186, 186, 186);
+    border-left-color: rgb(209, 209, 209);
+    border-radius: 4px;
+    border-right-color: rgb(209, 209, 209);
+    border-top-color: rgb(216, 216, 216);
+    color: #00d;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 2px 7px 3px 7px;
+    text-align: center;
+    text-decoration: underline;
+}
+.colorError {
+    color: #d00;
 }
 .uiAnimateShake {
     animation-duration: 500ms;
@@ -99,7 +120,6 @@ pre {
     border: 0;
     border-radius: 0;
     margin: 0;
-    margin-bottom: 10px;
     max-width: 100%;
     padding: 0;
 }
@@ -108,22 +128,15 @@ pre {
 .swggUiContainer .resource > .thead > .td:focus {
     outline: none;
 }
+.swggUiContainer .description > * {
+    margin-top: 20px;
+}
+.swggUiContainer .description > *:first-child {
+    margin-top: 0;
+}
 /* jslint-ignore-end */
 /* validateLineSortedReset */
 /* general */
-.swggUiContainer {
-    max-width: 1200px;
-}
-.swggUiContainer button,
-.swggUiContainer .operation > .thead,
-.swggUiContainer .resource > .thead {
-    cursor: pointer;
-}
-.swggUiContainer button,
-.swggUiContainer .operation > .thead > .td3 {
-    font-weight: bold;
-    text-decoration: underline;
-}
 .swggUiContainer code,
 .swggUiContainer pre,
 .swggUiContainer textarea {
@@ -139,13 +152,20 @@ pre {
 .swggUiContainer pre {
     white-space: pre;
 }
-.swggUiContainer textarea {
-    white-space: nowrap;
+.swggUiContainer .button,
+.swggUiContainer .operation > .thead,
+.swggUiContainer .resource > .thead {
+    cursor: pointer;
+}
+.swggUiContainer .button,
+.swggUiContainer .operation > .thead > .td3,
+.swggUiContainer .resource > .thead > .td {
+    font-weight: bold;
+    text-decoration: underline;
 }
 .swggUiContainer .markdown pre {
     max-height: none;
 }
-
 .swggUiContainer .multilinePlaceholderContainer {
     min-height: 10rem;
     position: relative;
@@ -164,12 +184,6 @@ pre {
 .swggUiContainer .operation > .thead > .td2 {
     text-align: center;
     width: 5rem;
-}
-.swggUiContainer .resourceIi {
-    min-width: 3rem;
-}
-.swggUiContainer .resourceSummary {
-    font-weight: lighter;
 }
 .swggUiContainer .responseBody,
 .swggUiContainer .responseHeaders,
@@ -195,18 +209,17 @@ pre {
 .swggUiContainer .td textarea {
     width: 100%;
 }
-.swggUiContainer > .thead > .td1 {
-    font-size: x-large;
-}
 /* validateLineSortedReset */
 /* background */
-.swggUiContainer button {
+.swggUiContainer code,
+.swggUiContainer pre {
+    background: #ddd;
+}
+.swggUiContainer .button {
     background: #ddf;
 }
-.swggUiContainer code,
-.swggUiContainer pre,
-.swggUiContainer .operationDescription {
-    background: #ddd;
+.swggUiContainer .description {
+    background: #bdb;
 }
 .swggUiContainer .methodDELETE {
     background: #b07;
@@ -235,37 +248,35 @@ pre {
 .swggUiContainer .operation {
     background: #dfd;
 }
-.swggUiContainer .resourceDescription {
-    background: #9d9;
-}
+.swggUiContainer .resource > .thead,
 .swggUiContainer > .thead {
-    background: #7b5;
+    background: #7b7;
 }
 .swggUiContainer > .thead > .td1 {
     background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAqRJREFUeNrEVz1s00AUfnGXii5maMXoEUEHVwIpEkPNgkBdMnQoU5ytiKHJwpp2Q2JIO8DCUDOxIJFIVOoWZyJSh3pp1Q2PVVlcCVBH3ufeVZZ9Zye1Ay86nXV+ue/9fO/lheg/Se02X1rvksmbnTiKvuxQMBNgBnN4a/LCbmnUAP6JV58NCUsBC8CuAJxGPF47OgNqBaA93tolUhnx6jC4NxGwyOEwlccyAs+3kwdzKq0HDn2vEBTi8J2XpyMaywNDE157BhXUE3zJhlq8GKq+Zd2zaWHepPA8oN9XkfLmRdOiJV4XUUg/IyWncLjCYY/SHndV2u7zHr3bPKZtdxgboJOnthvrfGj/oMf3G0r7JVmNlLfKklmrt2MvvcNO7LFOhoFHfuAJI5o6ta10jpt5CQLgwXhXG2YIwvu+34qf78ybOjWTnWwkgR36d7JqJOrW0hHmNrKg9xhiS4+1jFmrxymh03B0w+6kURIAu3yHtOD5oaUNojMnGgbcctNvwdAnyxvxRR+/vaJnjzbpzcZX+nN1SdGv85i9eH8w3qPO+mdm/y4dnQ1iI8Fq6Nf4cxL6GWSjiFDSs0VRnxC5g0xSB2cgHpaseTxfqOv5uoHkNQ6Ha/N1Yz9mNMppEkEkYKj79q6uCq4bCHcSX3fJ0Vk/k9siASjCm1N6gZH6Ec9IXt2WkFES2K/ixoIyktJPAu/ptOA1SgO5zqtr6KASJPF0nMV8dgMsRhRPOcMwqQAOoi0VAIMLAEWJ6YYC1c8ibj1GP51RqwzYwZVMHQuvOzMCBUtb2tGHx5NAdLKqp5AX7Ng4d+Zi8AGDI9z1ijx9yaCH04y3GCP2S+QcvaGl+pcxyUBvinFlawoDQjHSelX8hQEoIrAq8p/mgC88HOS1YCl/BRgAmiD/1gn6Nu8AAAAASUVORK5CYII=) no-repeat left center;
 }
 /* validateLineSortedReset */
 /* border */
-.swggUiContainer button {
-    border: 1px solid #35b;
-    border-radius: 5px;
-}
 .swggUiContainer input,
 .swggUiContainer pre,
 .swggUiContainer select,
 .swggUiContainer textarea {
     border: 1px solid #999;
 }
-.swggUiContainer .resource:first-child {
-    border-top: 1px solid #777;
-}
-.swggUiContainer .styleBorderBottom1px {
+.swggUiContainer .borderBottom1Px {
     border-bottom: 1px solid #777;
+}
+.swggUiContainer .button {
+    border: 1px solid #35b;
+    border-radius: 5px;
+}
+.swggUiContainer .resource > .thead > .td2 {
+    border-left: 1px solid #037;
 }
 /* validateLineSortedReset */
 /* color */
 .swggUiContainer a,
-.swggUiContainer button,
+.swggUiContainer .button,
 .swggUiContainer .operation > .thead,
 .swggUiContainer .resource > .thead {
     color: #35b;
@@ -283,14 +294,9 @@ pre {
     color: #999;
 }
 .swggUiContainer .operation > .thead > .td2,
+.swggUiContainer .resource > .thead,
 .swggUiContainer > .thead > .td1 {
-    color: #eee;
-}
-/* validateLineSortedReset */
-/* display */
-.swggUiContainer .onEventResourceDisplayAction {
-    display: inline-block;
-    text-decoration: underline;
+    color: #fff;
 }
 .swggUiContainer .thead,
 .swggUiContainer .tr {
@@ -333,49 +339,46 @@ pre {
 }
 /* validateLineSortedReset */
 /* margin */
-.swggUiContainer {
-    margin: 0 auto;
-}
-.swggUiContainer audio,
-.swggUiContainer img,
-.swggUiContainer option,
-.swggUiContainer video,
-.swggUiContainer .operation .thead,
-.swggUiContainer .responseBody,
-.swggUiContainer .responseMedia,
-.swggUiContainer .td,
-.swggUiContainer .td .onEventResourceDisplayAction {
-    margin-bottom: 0;
+.swggUiContainer li {
+    margin-top: 10px;
 }
 .swggUiContainer ol,
 .swggUiContainer ul,
-.swggUiContainer .operation > .thead > .td1,
 .swggUiContainer .td {
     margin-left: 20px;
 }
+.swggUiContainer .description,
+.swggUiContainer .label,
+.swggUiContainer .operation,
+.swggUiContainer .operation > form > div,
+.swggUiContainer .operation > form > pre,
+.swggUiContainer .resource,
+.swggUiContainer > div,
+.swggUiContainer > ol,
+.swggUiContainer > pre,
+.swggUiContainer > .info > div,
+.swggUiContainer > .info > ul,
+.swggUiContainer > .info > .button,
+.swggUiContainer > .info > .hx {
+    margin-top: 20px;
+}
 .swggUiContainer .label {
-    margin-bottom: 1px;
+    margin-bottom: -19px;
 }
-.swggUiContainer .onEventOperationAjax,
-.swggUiContainer .schemaP {
-    margin-bottom: 20px;
+.swggUiContainer .operation > form > .button {
+    margin: 40px 0 20px 0;
 }
-.swggUiContainer .operation button {
-    margin-bottom: 40px;
-    margin-top: 40px;
-}
-.swggUiContainer .operation > .thead > .td4 {
-    margin-right: 20px;
-}
-.swggUiContainer .td:first-child {
+.swggUiContainer .resource > ol,
+.swggUiContainer .resource > .thead > .td,
+.swggUiContainer .td:first-child,
+.swggUiContainer > ol {
     margin-left: 0;
+}
+.swggUiContainer .resource > ol > .description {
+    margin-top: 0;
 }
 /* validateLineSortedReset */
 /* padding */
-.swggUiContainer button,
-.swggUiContainer > .thead {
-    padding: 10px;
-}
 .swggUiContainer code {
     padding: 2px;
 }
@@ -386,24 +389,36 @@ pre {
 .swggUiContainer textarea {
     padding: 5px;
 }
-.swggUiContainer .operation > .content {
+.swggUiContainer .button,
+.swggUiContainer .resource > .thead > .td,
+.swggUiContainer > .thead {
+    padding: 10px 20px;
+}
+.swggUiContainer .description {
     padding: 20px;
+}
+.swggUiContainer .operation > form {
+    padding: 0 20px;
+}
+.swggUiContainer .operation > form .td1 {
+    padding-left: 0;
+}
+.swggUiContainer .operation > .thead {
+    padding: 0 20px;
 }
 .swggUiContainer .operation > .thead > .td {
     padding: 10px 0;
 }
-.swggUiContainer .operationDescription {
-    padding: 15px 10px 1px 10px;
-}
-.swggUiContainer .resource:first-child {
-    padding-top: 10px;
-}
-.swggUiContainer .resourceDescription {
-    padding: 20px 20px 10px 20px;
-}
 .swggUiContainer > .thead > .td1 {
     padding-left: 40px;
-    padding-top: 5px;
+    padding-top: 4px;
+}
+/* validateLineSortedReset */
+/* .textOverflowEllipsis */
+.swggUiContainer .textOverflowEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 /* validateLineSortedReset */
 /* @media */
@@ -427,12 +442,12 @@ pre {
 /* validateLineSortedReset */
 /* hover */
 .swggUiContainer a:hover,
+.swggUiContainer .resource > .thead > .td:hover,
 .swggUiContainer > .thead > .td1:hover {
     color: #037;
 }
-.swggUiContainer button:hover,
-.swggUiContainer .operation > .thead:hover,
-.swggUiContainer .resource > .thead > .td:hover {
+.swggUiContainer .button:hover,
+.swggUiContainer .operation > .thead:hover {
     background: #bbf;
 }
 /* validateLineSortedReset */
@@ -444,22 +459,20 @@ pre {
 }
 .swggUiContainer input.hasError,
 .swggUiContainer select.hasError {
-    border: 5px solid #c00;
-}
-.swggUiContainer .errorMessage {
-    color: #c00;
+    border: 5px solid #d00;
 }
 </style>
 </head>
-<body>
+<body style="background: #eef; font-family: Arial, Helvetica, sans-serif; margin: 0 40px;">
 <div id="ajaxProgressDiv1" style="background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;"></div>
 <div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;"></div>
+<code style="display: none;"></code><div class="button uiAnimateShake uiAnimateSlide utility2FooterDiv zeroPixel" style="display: none;"></div><pre style="display: none;"></pre><textarea readonly style="display: none;"></textarea>
 <script>
 /* jslint-utility2 */
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
@@ -500,9 +513,9 @@ pre {
     });
 }());
 </script>
-<div class="swggUiContainer">
+<div class="swggUiContainer" style="margin: 0 auto; max-width: 1200px;">
 <!-- <div class="swggUiContainer"> -->
-<div class="eventDelegateKeyup eventDelegateSubmit onEventUiReload thead">
+<h2 class="eventDelegateKeyup eventDelegateSubmit hx onEventUiReload thead">
     <a class="td td1" href="https://github.com/kaizhu256/node-swgg" target="_blank">swgg</a>
     <input
         class="td td2"
@@ -517,14 +530,16 @@ pre {
         type="text"
         value=""
     >
-    <button class="eventDelegateClick onEventUiReload td td4">explore</button>
+    <button class="button eventDelegateClick onEventUiReload td td4">explore</button>
     <button
-        class="eventDelegateClick onEventUiReload td td5"
+        class="button eventDelegateClick onEventUiReload td td5"
         id="swggApiKeyClearButton1"
-    >clear api-keys</button>
-</div>
+    >
+        clear api-keys
+    </button>
+</h2>
 <div
-    class="errorMessage"
+    class="colorError"
     id="swggUiReloadErrorDiv1"
     style="background: none; border: 0;"
 ></div>
@@ -536,7 +551,7 @@ pre {
     <span>loading script</span>
     <div class="uiAnimateSpin" style="animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: inline-block; height: 25px; vertical-align: middle; width: 25px;"></div>
 </div>
-<div class="reset resourceList"></div>
+<ol class="reset resourceList" style="list-style-type: upper-roman;"></ol>
 <div class="utility2FooterDiv">
     [ this document was created with
     <a href="https://github.com/kaizhu256/node-swgg" target="_blank">swgg</a>
@@ -548,7 +563,7 @@ pre {
 /*jslint
     bitwise: true,
     browser: true,
-    maxerr: 8,
+    maxerr: 4,
     maxlen: 100,
     node: true,
     nomen: true,
